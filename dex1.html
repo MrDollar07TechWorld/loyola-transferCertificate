@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Certificate</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>  
+<!--FOR HEADING AND IMAGES-->
+<div class="titles">
+    <img src="./assets/images/founder.jpeg" alt="">
+    <h1>LOYOLAPOLYTECHNIC [YSRR]</h1>
+    <img src="./assets/images/logo.jpeg" alt="">
+</div>
+
+    <div class="phd"><h3>PULIVENDULA,YSR.KADAPA -516390</h3></div>
+
+    <!--SIDE NAVIGATION BAR-->
+    <div class="bmx">
+        <button class="button-74" id="bmx" role="button">+</button>
+        <button class="button-75" id="bmx2" role="button">-</button>
+      <style>
+        .button-74 {
+          background-color: #fbeee0;
+          border: 2px solid #422800;
+          border-radius: 30px;
+          box-shadow: #422800 4px 4px 0 0;
+          color: #422800;
+          cursor: pointer;
+          display: inline-block;
+          font-weight: 600;
+          font-size: 30px;
+          padding: 0 18px;
+          line-height: 50px;
+          text-align: center;
+          text-decoration: none;
+          user-select: none;
+          width: 30px;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          margin-left: 35px;
+          margin-top: 20px;
+        }
+        
+        .button-74:hover {
+          background-color: #fff;
+        }
+        
+        .button-74:active {
+          box-shadow: #422800 2px 2px 0 0;
+          transform: translate(2px, 2px);
+        }
+        
+        @media (min-width: 768px) {
+          .button-74 {
+            min-width: 50px;
+            padding: 2px;
+          }
+        }
+        </style>
+
+        </div>
+    <div class="nvbar">
+       <div class="links">
+        <a href="./assets/home.html"><button>DESK</button></a><br>
+        <a href="./assets/percentage.html"><button>PERCENTAGE</button></a><br>
+        <a href="./assets/certificate.html"><button>CERTIFICATE</button></a><br>
+        <a href="./assets/note app/index.html"><button>NOTE</button></a><br>
+        <a href="./assets/todolist/todolist.html"><button>TASK</button></a><br>
+       </div>
+    </div>
+<div class="container">
+    <div class="header">
+        <h1>TRANSFER CERTIFICATE</h1>
+    </div>
+    <div class="navbar">
+        <h2>Student Details</h2>
+    </div>
+    <div class="form">
+        <ul class="list">
+            <li>
+                <label for="name">NAME OF THE STUDENT:</label>
+                <input type="text" id="name" placeholder="enter name">
+             </li>
+            <li>
+                <label for="pin">PIN OF THE STUDENT:</label>
+                <input type="text" id="pin" placeholder="enter pin">
+            </li>
+            <li>
+                <label for="father-name">NAME OF THE FATHER/GUARDIAN:</label>
+                <input type="text" id="father-name" placeholder="enter FATHER/GUARDIAN NAME">
+            </li>
+            <li>
+                <label for="mother-name">NAME OF THE MOTHER:</label>
+                <input type="text" id="mother-name" placeholder="enter mother name">
+            </li>
+            <li>
+                <label for="nationality">NATIONALITY-RELIGION-CAST:</label>
+                <input type="text" id="nationality" placeholder="enter nationality-religion-cast">
+            </li>
+            <li>
+                <label for="category">CANDIDATE BELONGS TO:</label>
+                <input type="text" id="category" placeholder="SC/ST/OBC/OC">
+            </li>
+            <li>
+                <label for="dob">DATE OF BIRTH AS ENTERED IN THE ADMISSION REGISTER:</label>
+                <input type="date" id="dob" placeholder="enter DOB">
+            </li>
+            <li>
+                <label for="mother-tongue">MOTHER TONGUE AND MEDIUM OF INSTRUCTION:</label>
+                <input type="text" id="mother-tongue" placeholder="TELUGU-ENGLISH/HINDI-ENGLISH">
+            </li>
+            <li>
+                <label for="admission-date">DATE OF ADMISSION:</label>
+                <input type="date" id="admission-date" placeholder="enter date">
+            </li>
+            <li>
+                <label for="admission-num">ADMISSION NO:</label>
+                <input type="text" id="admission-num" placeholder="enter admission number">
+            </li>
+            <li>
+                <label for="academic-particulars">OTHER ACADEMIC PARTICULARS:</label>
+                <input type="text" id="academic-particulars" placeholder="enter branch code :DCME/ECE/EEE">
+            </li>
+            <li>
+                <label for="CONDUCT-CHARECTER">CONDUCT AND CHARECTER:</label>
+                <input type="text" id="conduct" placeholder="SATISFACTORY">
+            </li>
+            <li>
+                <label for="applied-date">DATE ON WHICH APPLICATION WAS MADE:</label>
+                <input type="DATE" id="applied-date" placeholder="enter branch code ;DCME/ECE/EEE">
+            </li>
+                <button id="button" onclick="submit()">GENERATE</button>
+        </ul>
+    </div>
+</div>
+<!-- FOR MY CERTIFICATE PRINTING -->
+<div class="certificatebox" id="box">
+
+
+<div class="AMDSEC">
+    <span>ADMISSION NO: <span id="amdnoc">19446</span></span><br>
+    <span>DATE: <span id="date">06/08/2024</span>
+    </span>
+</div>
+
+<div class="formD">
+                <ul class="listD">
+                <li>
+                    <label for="college">NAME OF THE POLYTECHNIC (PLACE&DISTRICT) <span>:</span></label>
+                    <span id="CLG">LOYOLAPOLYTECHNIC(YSRR) <br> PULIVENDULA,YSR.KADAPA -516390</span>
+                </li>
+                <li>
+                    <label for="name">NAME OF THE STUDENT <span>:</span></label>
+                    <span id="nm">YADDULA  NANDHI VARDHAN REDDY</span>
+                </li>
+                <li>
+                    <label for="pin">PIN OF THE STUDENT <span>:</span></label>
+                    <span id="pi">trt</span>
+                </li>
+                <li>
+                    <label for="father-name">NAME OF THE FATHER/GUARDIAN <span>:</span></label>
+                    <span id="fn">fn</span>
+                </li>
+                <li>
+                    <label for="mother-name">NAME OF THE MOTHER <span>:</span></label>
+                    <span id="mn">md</span>
+                </li>
+                <li>
+                    <label for="nationality">NATIONALITY-RELIGION-CAST <span>:</span></label>
+                    <span id="nrc">nrc</span>
+                </li>
+                <li>
+                    <label for="category">THE CANDIDATE BELONGS TO (SC/ST/BC/OC) <span>:</span></label>
+                    <span id="cat">cat</span>
+                </li>
+                <li>
+                    <label for="dob">DATE OF BIRTH AS ENTERED IN THE ADMISSION REGISTER <span>:</span></label>
+                    <span id="db">db</span>
+                    </li>
+                <li>
+                    <label for="mother-tongue">MOTHER TONGUE AND MEDIUM OF INSTRUCTION <span>:</span></label>
+                    <span id="mt">mt</span>
+                </li>
+                <li>
+                    <label for="admission-date">DATE OF ADMISSION <span>:</span></label>
+                    <span id="ed">ed</span>
+                </li>
+                <li>
+                    <label for="academic-particulars">OTHER ACADEMIC PARTICULARS <span>:</span></label>
+                    <span id="ap">ap</span>
+                </li>
+                <li>
+                    <label for="charecter">CONDUCT AND CHARECTER <span>:</span></label>
+                    <span id="charecter">charecter</span>
+                </li>
+                <li>
+                    <label for="applied-date">DATE ON WHICH APPLICATION WAS MADE <span>:</span></label>
+                    <span id="ad">ad</span>
+                </li>
+                <li>
+                    <label for="signature">SIGNATURE OF THE PRINCIPAL <span>:</span></label>
+                    <span id="ad"></span>
+                </li>
+
+                </ul>
+</div>
+</div>
+<div class="dnxbtn">
+    <input type="button" value="Download" id="download">
+</div>
+<script src="./assets/script.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+
+<script>
+        const container = document.querySelector('.certificatebox');
+        const downloadBtn = document.getElementById('download');
+
+        downloadBtn.addEventListener('click', () => {
+                    console.log('Download button clicked');
+
+                    html2canvas(container, {
+                    useCORS: true,
+                    logging: true,
+                    }).then(canvas => {
+                    console.log('html2canvas rendering complete');
+
+                    // Download as PNG
+                    const pngUrl = canvas.toDataURL('image/png');
+                    const pngLink = document.createElement('a');
+                    pngLink.href = pngUrl;
+                    pngLink.download = 'container.png';
+                    pngLink.click();
+                    console.log('PNG downloaded');
+                    /*
+                    // Download as PDF
+                    const pdfDocDefinition = {
+                    content: [{
+                    image: pngUrl,
+                    width: 800,
+                    }],
+                    };
+
+                    // Create a new instance of pdfMake
+                    const pdfMake = window.pdfMake;
+
+                    // Create a new PDF document
+                    const pdfDoc = pdfMake.createPdf(pdfDocDefinition);
+
+                    // Download the PDF
+                    pdfDoc.download('container.pdf');
+                    console.log('PDF downloaded');*/
+                    });
+        });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+
+.bar1
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px;
+    flex-grow: 2px;
+    flex-direction: row;
+}
+.admissons
+{
+    background-image: radial-gradient( circle 382px at 50% 50.2%,  rgba(73,76,212,1) 0.1%, rgba(3,1,50,1) 100.2% );
+  width: 300px;
+  border-radius: 20px;
+  height: 200px;
+  color: #fff;
+  position: relative;
+  transform: translate(line-height,10%) 1s;
+  
+}
+.admissons::before
+{
+    content:'';
+    background-image: url('/assets/images/amd.png');
+    background-position: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:none;
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    height: 100px;
+    width: 100px;
+    
+}
+
+.admissons h2
+{
+ align-self: center;
+ margin-left: 20%;   
+}
+
+
+.admissons:hover
+{
+    background-image: linear-gradient( 109.6deg,  rgba(228,107,232,1) 11.2%, rgba(87,27,226,1) 96.7% );
+}
+.certificates
+{
+    background-image: linear-gradient( 132.6deg,  rgba(71,139,214,1) 23.3%, rgba(37,216,211,1) 84.7% );
+    width: 300px;
+    border-radius: 20px;
+     height: 200px;
+     position: relative;
+}
+
+.certificates h2
+{
+    color: #fff;
+ align-self: center;
+ margin-left: 20%;   
+}
+
+
+.certificates::before
+{
+    content:'';
+    background-image: url('/assets/images/cert.png');
+    background-position: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:none;
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    height: 100px;
+    width: 100px;
+}
+a{
+    display: inline-flex;
+    text-decoration: none;
+
+}
+.certificates:hover
+{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );
+}
+.percentage
+{
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(162,102,246,1) 0%, rgba(203,159,249,1) 90% );
+    width: 300px;
+    border-radius: 20px;
+     height: 200px;
+     position: relative;
+
+}
+.percentage:hover
+{
+    background-image: radial-gradient( circle 325px at 19.2% 64.8%,  rgba(254,62,101,1) 9.7%, rgba(166,24,146,1) 91.3% );
+}
+.percentage h2
+{
+    color: #fff;
+ align-self: center;
+ margin-left: 20%;   
+}
+
+.percentage::before
+{
+    content:'';
+    background-image: url('/assets/images/calc.png');
+    background-position: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:none;
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    height: 100px;
+    width: 100px;
+}
+
+/* FOR SECOND BAR */
+.note
+{
+    background-image: radial-gradient( circle 382px at 50% 50.2%,  rgb(73, 173, 212) 0.1%, rgb(156, 143, 101) 100.2% );
+  width: 300px;
+  border-radius: 20px;
+  height: 200px;
+  color: #fff;
+  position: relative;
+  transform: translate(line-height,10%) 1s;
+  
+}
+.note::before
+{
+    content:'';
+    background-image: url('/assets/note app/notes.png');
+    background-position: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:none;
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    height: 100px;
+    width: 100px;
+   
+}
+
+.note h2
+{
+ align-self: center;
+ margin-left: 20%;   
+}
+
+
+.note:hover
+{
+    background-image: linear-gradient( 109.6deg,  rgb(143, 177, 127) 11.2%, rgba(27, 40, 226, 0.747) 96.7% );
+}
+
+
+.tc
+{
+    background-image: radial-gradient( circle 674px at 18.3% 77%,  rgba(139,186,244,1) 3.4%, rgba(15,51,92,1) 56.6% );
+    width: 300px;
+    border-radius: 20px;
+     height: 200px;
+     position: relative;
+}
+
+.tc h2
+{
+    color: #fff;
+ align-self: center;
+ margin-left: 20%;   
+}
+
+
+.tc::before
+{
+    content:'';
+    background-image: url('/assets/images/tc.png');
+    background-position: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:none;
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    height: 100px;
+    width: 100px;
+}
+a{
+    display: inline-flex;
+    text-decoration: none;
+
+}
+.tc:hover
+{
+    background-image: radial-gradient( circle 650px at 15.3% 77%,  rgb(129, 104, 216) 3.4%, rgba(95, 202, 209, 0.911) 53.6% );
+}
+
+
+.task
+{
+    background-image: linear-gradient( 109.6deg,  rgba(62,161,219,1) 11.2%, rgba(93,52,236,1) 100.2% );
+    width: 300px;
+    border-radius: 20px;
+     height: 200px;
+     position: relative;
+
+}
+.task:hover
+{
+    background-image: linear-gradient( 63.1deg,  rgba(5,23,111,1) 16.4%, rgba(24,95,240,1) 64.5% );
+}
+.task h2
+{
+    color: #fff;
+ align-self: center;
+ margin-left: 20%;   
+}
+
+.task::before
+{
+    content:'';
+    background-image: url('/assets/todolist/images/icon.png');
+    background-position: fill;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:none;
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    height: 100px;
+    width: 100px;
+}

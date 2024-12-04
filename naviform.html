@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrailFrom</title>
+    <style>
+        .loginForm{
+            background: #fff;
+            border: 3px solid white;
+            box-shadow: 10px 10px 10px black;
+            width: fit-content;
+            align-items: center;
+            margin:50px  auto 40px;
+            border-left: 13px solid brown;
+        }
+        .loginForm .form
+{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    gap: 20px;
+    align-content: center;
+}
+.loginForm .form label
+{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(116, 111, 111);
+}
+.loginForm .form label
+input
+{
+    height: 32px;
+    width: 320px;
+    outline: none;
+    padding-left: 20px;
+    border: none;
+    margin-top: -5px;
+    font-size: 16px;
+}
+.loginForm .form label
+span
+{
+    position: relative;
+    top: -12px;
+    left: 5px;
+    width: fit-content;
+    background:#fff;
+}
+.loginForm .form button
+{
+    background: #fff;
+    padding: 5px;
+    font-size: 18px;
+    width: 120px;
+}
+#errorBox
+{
+    display: none;
+    color: red;
+    width: 320px;
+}
+.btnn
+{
+    margin-top: 50px;
+}
+#mings
+{
+  position: relative;
+  top: -30px;
+  transition: all 0.3s ease-in-out;
+}
+#mings:hover
+{
+  background: #000;
+  color: #fff;
+}
+#mings1
+{
+    border: none;
+    color: brown;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 13px;
+}
+#mings12
+{
+    border: none;
+    color: brown;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 13px;
+}
+#mings1:hover,
+#mings12:hover
+{
+    color: rgb(214, 159, 86);
+}
+
+    </style>
+</head>
+<body>
+    <div class="loginForm">
+        <div class="form" >
+            <h1>Login</h1>
+            <label for="name"><span>User Name</span>
+                <input type="text" placeholder="Enter name" id="name" >
+            </label>
+           
+            <label for="password"><span>Password</span>
+                <input type="password" placeholder="Enter password" id="password">
+            </label>
+           
+            <p id="errorBox"></p>
+          
+            <div class="btnn">
+                <button id="mings" onclick="submit()">LOGIN</button>
+    
+            </div>
+        </div>
+    </div>
+
+<script>
+
+function submit()
+        {
+            var name=document.getElementById('name').value.trim();
+           
+            var pass=document.getElementById('password').value.trim();
+          //  var password="user@123";
+            //var user="User";
+            var user=localStorage.getItem('userFormData');
+            var password=localStorage.getItem('passFormData');
+            var ebox=document.getElementById('errorBox');
+            var erroeMessage="";
+            // checking the  values received for empty 
+
+            console.log("hai");
+            console.log(user);
+            console.log(password);
+            if(name===''&&pass==='')
+        {
+            erroeMessage=" Every field is to be filled in this form";
+
+        }
+        else{
+            if(name===''){
+            erroeMessage +="Name is required!! "
+        }
+       
+        
+         if(pass===''){
+            erroeMessage +="password is required!! "
+
+         }
+
+        
+        }
+        //checking for userlogin 
+        if(name.length>0 && pass.length>0)
+    {
+        if(name===user && pass===password)
+        {
+            alert("sucessfully loggedin");
+            window.location.href='index.html';  
+        }
+        else
+        {
+            erroeMessage +="Ivalid user Name or password";
+
+        }
+        
+
+    }
+
+        
+            if(erroeMessage.length>0)
+        {
+            ebox.innerHTML=erroeMessage;
+            ebox.style.display='block';
+        }
+        else
+        {
+            erroeMessage='';
+            ebox.style.display='none';
+            
+
+        }
+    }
+   
+    </script>
+</body>
+</html>

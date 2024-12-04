@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <style>
+        .loginForm{
+            background: #fff;
+            border: 3px solid white;
+            box-shadow: 10px 10px 10px black;
+            width: fit-content;
+            align-items: center;
+            margin:50px  auto 40px;
+            border-left: 13px solid brown;
+        }
+        .loginForm .form
+{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    gap: 20px;
+    align-content: center;
+}
+.loginForm .form label
+{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(116, 111, 111);
+}
+.loginForm .form label
+input
+{
+    height: 32px;
+    width: 320px;
+    outline: none;
+    padding-left: 20px;
+    border: none;
+    margin-top: -5px;
+    font-size: 16px;
+}
+.loginForm .form label
+span
+{
+    position: relative;
+    top: -12px;
+    left: 5px;
+    width: fit-content;
+    background:#fff;
+}
+.loginForm .form button
+{
+    background: #fff;
+    padding: 5px;
+    font-size: 18px;
+    width: 120px;
+    transition: all 0.5s ease-in-out;
+}
+.loginForm .form button:hover
+{
+    color: #fff;
+    background: #000;
+}
+#errorBox
+{
+    display: none;
+    color: red;
+    width: 320px;
+}
+#logs
+{
+    border: none;
+    color: brown;
+    font-size: 16px;
+}
+#logs:hover
+{
+color:  rgb(214, 159, 86);
+background: none;
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="loginForm">
+        <div class="form" >
+            <h1>SignUp</h1>
+            <label for="name"><span>Name</span>
+                <input type="text" placeholder="Enter name" id="name" >
+            </label>
+            
+            <label for="mail"><span>Email</span>
+                <input type="email" placeholder="Enter email" id="mail">
+            </label>
+            <label for="phonenumber"><span>Number</span>
+                <input type="number" placeholder="phonenumber" id="phonenumber">
+            </label>
+            <label for="password"><span>Password</span>
+                <input type="password" placeholder="enter password" id="password">
+            </label>
+            <label for="confirmpass"><span>Confirm password</span>
+                <input type="password" placeholder="confirm password" id="confirmpass">
+            </label>
+            <p id="errorBox"></p>
+          
+           
+            <button onclick="submit()">Submit</button>
+            <div class="btns">
+            <span>Alredy have an account ..? </span>
+            <button id="logs" onclick="window.location.href='naviform.html'">Login</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // taking it as div becasue of preventing the default submission
+        function submit()
+        {
+            var name=document.getElementById('name').value.trim();// .value.trim() " revant " ="revanth"
+            var mail=document.getElementById('mail').value.trim();
+            var phno=document.getElementById('phonenumber').value.trim();
+            var pass=document.getElementById('password').value.trim();
+            var cpass=document.getElementById('confirmpass').value.trim();
+            var ebox=document.getElementById('errorBox');
+            var erroeMessage="";
+            // checking the  values received for empty 
+            if(name===''&&mail===''&&pass===''&&cpass==='')
+        {
+            erroeMessage=" Every field is to be filled in this form";
+
+        }
+        else{
+            if(name===''){
+            erroeMessage +="Name is required!! "; // += prevous data new concat add 
+        }
+       
+         if(mail===''){
+            erroeMessage +="mail is required!! "
+        }
+         if(phno===''){
+            erroeMessage +="Phone number is required!! "
+
+        }
+         if(pass===''){
+            erroeMessage +="password is required!! "
+
+         }
+
+         if(cpass==='')
+         {
+            erroeMessage +="confirmation password is required!! "
+
+         }
+
+        }
+        //validating phone number
+        if((phno.length>0&&phno.length<10)||phno.length>10)
+        {
+            erroeMessage +=" In valid Phonenumber !";
+        }
+        if(pass.length>0&&pass.length<8)
+        {
+            erroeMessage +=" Password Must contain 8 Charecters ! ";
+        }
+        else if(pass.length>8)
+        {
+            erroeMessage +=" password Must not exceed 8 charecters ! ";
+        }
+        //mail function
+        if( mail.length>0 && !validateEmail(mail))// not  false= true  && both true : 
+        {
+            erroeMessage +=' Invalid email format';
+        }
+
+
+
+        // validating email
+        function validateEmail(mail) 
+            {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                // Basic regex for email validation
+                console.log(regex.test(mail));
+                return regex.test(mail);// false
+            } 
+
+//to verify the password and confirm password
+if(pass!==cpass)
+{
+    erroeMessage+=" confirm password is not matched with password !! ";
+}
+
+
+         if(erroeMessage.length>0)// error length =0 , >0
+        {
+            ebox.innerHTML=erroeMessage;
+            ebox.style.display='block';
+
+        }
+        else
+        {
+            erroeMessage='';
+            ebox.style.display='none';
+            localStorage.setItem('userFormData',name);
+            localStorage.setItem('passFormData',pass);
+            localStorage.setItem('emaiFormData',mail);
+            localStorage.setItem('numberFormData',phno);
+            window.location.href="naviform.html";// window functions () these are global : window or else same page event measure : window.location.here="path";
+
+        }
+           
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMISSION</title>
+    <link rel="stylesheet" href="./amd.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="con">
+    <div class="logo">
+        <img src="./lo.png" alt="Loyola Polytechnic Logo">
+    </div>
+    <h1>LOYOLA POLYTECHNIC</h1>
+    <div class="logo">
+        <img src="./founder.png" alt="Loyola Polytechnic Logo">
+    </div>
+</div>
+    <p>PULIVENDULA, YSR.KADAPA -516390</p>
+    
+   <div class="form">
+    <h3>STUDENT DETAILS </h3>
+
+        
+    <table>
+        <tr>
+            <th>CANDIDATE NAME</th><th>:</th><td><input type="text" spellcheck="false" id="name" maxlength="30" placeholder="ENTER NAME"></td>
+        </tr>
+        <tr>
+            <th>DATE OF BIRTH</th><th>:</th><td><input type="text" spellcheck="false" id="dob" maxlength="30" placeholder="dd-mm-yyyy"></td>
+        </tr>
+
+        <tr>
+            <th>FATHER NAME</th><th>:</th><td><input type="text" spellcheck="false" id="fname" maxlength="30" placeholder="NAME OF THE FATHER"></td>
+        </tr>
+
+        <tr>
+            <th>MOTHER NAME</th><th>:</th><td><input type="text" spellcheck="false" id="mname" maxlength="30" placeholder="NAME OF THE MOTHER"></td>
+        </tr>
+        <tr>
+            <th>STUDENT AADHAR NO</th><th>:</th><td><input type="text" spellcheck="false" id="aadno" maxlength="30" placeholder="0000000000"></td>
+        </tr>
+        <tr>
+            <th>STUDENT MOBILE NO</th><th>:</th><td><input type="text" spellcheck="false" id="mno" maxlength="30"placeholder="+91 0000000000"></td>
+        </tr>
+
+        <tr>
+            <th>PERMANENT ADDRESS</th><th>:</th><td><input type="text" spellcheck="false" id="address" maxlength="300" placeholder="@address"></td>
+        </tr>
+        <tr>
+            <th>SSC COMPLETED IN</th><th>:</th><td><input type="text" spellcheck="false" id="schname" maxlength="50" placeholder="SCHOOL NAME"></td>
+        </tr>
+
+        <tr>
+            <th>SSC SCORE</th><th>:</th><td><input type="text" spellcheck="false" id="score" maxlength="30" placeholder="SSC GPA/MARKS"></td>
+        </tr>
+        <tr>
+            <th>COURSE JOINED </th><th>:</th><td><input type="text" spellcheck="false" id="course" maxlength="30" placeholder="DCME/DECE/DMG/DEEE"></td>
+        </tr>
+        <tr>
+            <th>DATE OF ADMISSION</th><th>:</th><td><input type="text" spellcheck="false" id="doa" maxlength="30" placeholder="dd-mm-yyyy"></td>
+        </tr>
+       
+    </table>
+    <button type="submit">Submit</button>
+   </div>
+  
+<input type="button" name="download" value="Download the below Table" id="download">
+<input type="button" name="download" value="SHOW TABLE " id="show">
+<input type="button" name="download" value="HIDE TABLE" id="hide">
+
+<div class="disp">
+    <table id="tble">
+        <tr>
+                <th>NAME</th>
+                <th>DOB</th>
+                <th>FATHER NAME</th>
+                <th>MOTHER NAME</th>
+                <th>AADHAR NO</th>
+                <th>MOBILE NO</th>
+                <th>ADDRESS</th>
+                <th>SCHOOL</th>
+                <th>SSC SCORE</th>
+                <th>BRANCH</th>
+                <th>JOINING DATE</th>
+                <th><img src="delete.png" alt=""></th>
+        </tr>
+       
+    </table>
+</div>
+
+
+
+    <div class="footer">
+        <h3>Designed & Developed By @Chandrika </h3>
+        <p>   ©coprights2024 @all copyrights are reserved</p>
+    </div>
+
+
+
+  
+        <script src="adm.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+
+<script>
+        const container = document.querySelector('.disp');
+        const downloadBtn = document.getElementById('download');
+
+        downloadBtn.addEventListener('click', () => {
+                    console.log('Download button clicked');
+
+                    html2canvas(container, {
+                    useCORS: true,
+                    logging: true,
+                    }).then(canvas => {
+                    console.log('html2canvas rendering complete');
+
+                    // Download as PNG
+                    const pngUrl = canvas.toDataURL('image/png');
+                    const pngLink = document.createElement('a');
+                    pngLink.href = pngUrl;
+                    pngLink.download = 'data.png';
+                    pngLink.click();
+                    console.log('PNG downloaded');
+                    /*
+                    // Download as PDF
+                    const pdfDocDefinition = {
+                    content: [{
+                    image: pngUrl,
+                    width: 800,
+                    }],
+                    };
+
+                    // Create a new instance of pdfMake
+                    const pdfMake = window.pdfMake;
+
+                    // Create a new PDF document
+                    const pdfDoc = pdfMake.createPdf(pdfDocDefinition);
+
+                    // Download the PDF
+                    pdfDoc.download('container.pdf');
+                    console.log('PDF downloaded');*/
+                    });
+        });
+</script>
+<script>
+    // to download data 
+
+function downloadPDF() {
+  const table = document.querySelector('.disp table');
+  const pdf = new jsPDF('l', 'pt', 'a4');
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = pdf.internal.pageSize.getHeight();
+
+  // Set the font and font size
+  pdf.setFontSize(12);
+  pdf.setFont('helvetica');
+
+  // Add the table to the PDF
+  pdf.fromHTML(table, 10, 10, {
+    'width': pdfWidth - 20,
+    'elementHandlers': specialElementHandlers
+  });
+
+  // Add a header and footer to the PDF
+  pdf.text('Student Details', pdfWidth / 2, 20, null, null, 'center');
+  pdf.text('Generated on ' + new Date().toLocaleDateString(), pdfWidth / 2, pdfHeight - 20, null, null, 'center');
+
+  // Save the PDF
+  pdf.save('student_details.pdf');
+}
+
+// Special element handlers for the table
+const specialElementHandlers = {
+  '#tble': function(element, renderer) {
+    return true;
+  }
+};
+
+</script>
+</body>
+</html>

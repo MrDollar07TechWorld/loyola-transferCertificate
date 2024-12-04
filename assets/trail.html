@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download Container as PNG/PDF</title>
+  <style>
+   .container {
+      width: 500px;
+      height: 600px;
+      background-image: url('logo.jpeg');
+      background-size: 300px;
+     
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 20px;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Container Contents</h1>
+    <p>This is some sample text.</p>
+    <p>This is another paragraph of text.</p>
+    <p>This is a third paragraph of text.</p>
+  </div>
+  <button id="download-btn">Download as PNG/PDF</button>
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>  <script>
+    const container = document.querySelector('.container');
+    const downloadBtn = document.querySelector('#download-btn');
+
+    downloadBtn.addEventListener('click', () => {
+      console.log('Download button clicked');
+
+      html2canvas(container, {
+        useCORS: true,
+        logging: true,
+      }).then(canvas => {
+        console.log('html2canvas rendering complete');
+
+        // Download as PNG
+        const pngUrl = canvas.toDataURL('image/png');
+        const pngLink = document.createElement('a');
+        pngLink.href = pngUrl;
+        pngLink.download = 'container.png';
+        pngLink.click();
+        console.log('PNG downloaded');
+
+        // Download as PDF
+        const pdfDocDefinition = {
+          content: [{
+            image: pngUrl,
+            width: 800,
+          }],
+        };
+        const pdfMake = new pdfMake();
+        const pdfDoc = pdfMake.createPdf(pdfDocDefinition);
+        pdfDoc.download('container.pdf');
+        console.log('PDF downloaded');
+      });
+    });
+  </script>
+</body>
+</html>

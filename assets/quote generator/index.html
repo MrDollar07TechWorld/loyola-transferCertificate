@@ -1,0 +1,72 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Daily quote....!</title>
+   <style>
+    body
+    {
+        background:linear-gradient(40deg,#c27e5e,#fedecf);
+    }
+    .container
+    {
+        max-width: 700px;
+        background: #fff;
+        padding: 20px;
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translate(-50%,-50%);
+        border-radius: 30px;
+       
+    }
+    .quotebo blockquote{
+        font-weight: 900;
+        font-size: 22px;
+       align-items: center;
+       justify-content: center;
+        
+        
+    }
+   
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="quotebo">
+            <blockquote>Quote of the Day! <br/>
+            <hr></hr></blockquote>
+            <h2>loading</h2>
+            <span>lad....</span>
+        </div>
+    </div>
+    <script>
+    /*const url_api='https://quotes-api-self.vercel.app/quote';
+    async function getquote(url)
+    {
+        let response = await fetch(url);
+        var data= await response.json();
+        console.log(data)
+        document.querySelector('.quotebo h2').innerHTML=data.quote;
+        document.querySelector('.quotebo span').innerHTML=data.author;
+    }
+    getquote(url_api);*/
+
+    fetch('https://quotes-api-self.vercel.app/quote')
+  .then(response => response.json())
+  .then(data => {
+    // Handle the retrieved quote
+    console.log(data);
+    document.querySelector('.quotebo h2').innerHTML=data.quote;
+        document.querySelector('.quotebo span').innerHTML=data.author;
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error(error);
+  });
+
+     </script>
+    
+</body>
+</html>

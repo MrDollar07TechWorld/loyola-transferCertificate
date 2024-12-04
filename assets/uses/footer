@@ -1,0 +1,35 @@
+  <footer>
+            <h3>Designed & Developed By @Chandrika </h3>
+            <p>   ©coprights2024 @all copyrights are reserved</p>
+        </footer>
+        <style>
+            footer{
+                padding: 7px;
+                width: 100%;
+                background: #000;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                bottom: 1px;
+                
+            }
+        </style>
+        <script>
+            bmx=document.getElementById('bmx');
+bmx.addEventListener('focus',()=>{
+    document.querySelector(".nvbar").style.display="block"; 
+    document.querySelector(".button-74").style.display="none"; 
+    document.querySelector(".button-75").style.display="block"; 
+
+})
+
+document.querySelector(".button-75").addEventListener('click',()=>{
+    document.querySelector(".nvbar").style.display="none"; 
+    document.querySelector(".button-74").style.display="block"; 
+    document.querySelector(".button-75").style.display="none"; 
+
+})
+        </script>
